@@ -1,4 +1,6 @@
 # Four In A Row
+Four in a row game that uses SVG generated graphical elements. For educational
+purposes.
 
 ## TODO:
     - [x] implement unused tokens array
@@ -7,7 +9,7 @@
 ## Class Structure
 
 ### Game
-    board, players[], ready
+    board, players[], ready (bool)
 
     startGame()
     createPlayers()
