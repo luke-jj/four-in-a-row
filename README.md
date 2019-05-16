@@ -1,12 +1,15 @@
 # Four In A Row
-Four in a row game that uses SVG generated graphical elements. For educational
-purposes.
+Four in a row game that uses SVG generated graphical elements.
 
-## TODO:
-    - [x] implement unused tokens array
+To start simple launch `index.html` located in the `src/` folder with your
+favorite browser or serve the webpage over a local development server.
+
+    php -S localhost:8080
+    python -m SimpleHTTPServer 8080
+    python3 -m http.server 8080
 
 
-## Class Structure
+## JavaScript Class Structure
 
 ### Game
     board, players[], ready (bool)
