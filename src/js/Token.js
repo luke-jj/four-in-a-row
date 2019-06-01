@@ -15,6 +15,7 @@ class Token {
    * returns the left offset in relation to the nearest ancestor
    * @return  {number}    Left offset of this token object's htmlToken
    */
+
   get offsetLeft() {
     return this.htmlToken.offsetLeft;
   }
@@ -22,6 +23,7 @@ class Token {
   /*
    * Draw new html token
    */
+
   drawHTMLToken() {
     const div = document.createElement('div');
     document.getElementById('game-board-underlay').appendChild(div);
@@ -33,6 +35,7 @@ class Token {
   /*
    * Moves htmlToken one column to the left.
    */
+
   moveLeft() {
     console.log(`trying to move left, columnLocation: ${this.columnLocation} `
       + `offsetLeft: ${this.offsetLeft}`);
@@ -47,6 +50,7 @@ class Token {
    * Moves html token one column to right
    * @param   {number}    columns - number of columns in the game board
    */
+
   moveRight(columns) {
     console.log(`trying to move right, columnLocation: ${this.columnLocation} `
       + `offsetLeft: ${this.offsetLeft}`);
@@ -62,6 +66,7 @@ class Token {
    * @param   {Object}    target  - Targeted space for dropped token.
    * @param   {function}  reset   - function to call after animation is complete
    */
+
   drop(target, reset) {
     this.dropped = true;
 

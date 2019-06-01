@@ -14,6 +14,7 @@ class Space {
    * return null.
    * @return    {(null|Object)} Returns null or the owner object of this space.
    */
+
   get owner() {
     if (this.token === null) {
       return null;
@@ -26,6 +27,7 @@ class Space {
    * create a circular SVG element to represent a token and append it
    * to the <svg> html element.
    */
+
   drawSVGSpace() {
     const svgSpace = document.createElementNS("http://www.w3.org/2000/svg", "circle");
     svgSpace.setAttributeNS(null, "id", this.id);
@@ -42,7 +44,9 @@ class Space {
    * Updates the space to reflect a token has been dropped into it.
    * @param   {Object}    token - The dropped token
    */
+
   mark(token) {
     this.token = token;
   }
 }
+

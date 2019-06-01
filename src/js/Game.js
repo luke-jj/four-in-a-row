@@ -9,6 +9,7 @@ class Game {
   /*
    * return the active player
    */
+
   get activePlayer() {
     return this.players.find(player => player.active);
   }
@@ -16,6 +17,7 @@ class Game {
   /*
    * create Players and return them in an array
    */
+
   createPlayers() {
     const playerArray = [new Player('player1', 1, '#e15258', true),
                          new Player('player2', 2, '#e59a13')];
@@ -28,6 +30,7 @@ class Game {
    * @param   {Object}    Targeted space for dropped token.
    * @return  {boolean}   Boolean value indicating whether the game has been won (true) or not (false)
    */
+
   checkForWin(target){
     const owner = target.token.owner;
     let win = false;
@@ -86,6 +89,7 @@ class Game {
   /*
    * switches active player status
    */
+
   switchPlayers() {
     for (let player of this.players) {
       player.active = !(player.active);
@@ -95,6 +99,7 @@ class Game {
   /*
    * find space object to drop token into; drop token
    */
+
   playToken() {
     const spaces = this.board.spaces;
     const activeToken = this.activePlayer.activeToken;
@@ -124,6 +129,7 @@ class Game {
    * @param   {Object}  token  - The token that's being dropped.
    * @param   {Object}  target - Targeted space for dropped item.
    */
+
   updateGameState(token, target) {
     target.mark(token);
 
@@ -146,6 +152,7 @@ class Game {
    * Display a game over message.
    * @param {String} message - Game over message
    */
+
   gameOver(message) {
     const gameOver = document.getElementById('game-over');
     gameOver.textContent = message;
@@ -155,6 +162,7 @@ class Game {
   /*
    * handle keyboard input during the
    */
+
   handleKeydown(event) {
     if (this.ready) {
       if (event.key == "ArrowLeft") {
@@ -172,6 +180,7 @@ class Game {
   /*
    *
    */
+
   startGame() {
     this.board.drawHTMLBoard();
     this.activePlayer.activeToken.drawHTMLToken();

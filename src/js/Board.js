@@ -10,6 +10,7 @@ class Board {
    * create all the spaces or 'slots' on the game board
    * return 2d array of spaces
    */
+
   createSpaces() {
     const spaces = new Array();
     for (let i = 0; i < this.columns; i++) {
@@ -25,6 +26,7 @@ class Board {
   /*
    * Draw associated SVG spaces for all game spaces.
    */
+
   drawHTMLBoard() {
     for (let i = 0; i < this.spaces.length; i++) {
       for (let j = 0; j < this.spaces[i].length; j++) {
