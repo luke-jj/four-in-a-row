@@ -3,13 +3,25 @@
   <head>
     <meta charset = "UTF-8">
     <title>Four in a Row</title>
-    <link href="https://fonts.googleapis.com/css?family=Wendy+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel="stylesheet">
     <link rel = "stylesheet" type = "text/css" href = "css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   </head>
   <body>
-    <button id="begin-game">Start</button>
+    <div>
+      <div class="player-names-input">
+        <div>
+          <label for="playerone">Player 1</label>
+          <input type="text" id="playerone" value="Player 1"></input>
+        </div>
+        <div>
+          <label for="playertwo">Player 2</label>
+          <input type="text" id="playertwo" value="Player 2"></input>
+        </div>
+      </div>
+      <button id="begin-game">Start</button>
+    </div>
     <div id="game-scene">
       <div id="play-area">
 
@@ -41,7 +53,7 @@
               <rect x="0" y="0" height="472" width="548" fill="white">
             </mask>
           </defs>
-          <rect id="board-back" x="0" y="0" width="548" height="472" mask="url(#mask)" fill-opacity="1" fill="#5FCF80"/>
+          <rect id="board-back" x="0" y="0" width="548" height="472" mask="url(#mask)" fill-opacity="1" fill="#4aa553"/>
         </svg>
 
         <!-- stand-container: the boards vertical support stands -->
@@ -60,9 +72,6 @@
       </div>
     </div>
 
-    <!-- table: so the board does not look like its floating -->
-    <div class="table">
-    </div>
 
     <script src = "js/Game.js"></script>
     <script src = "js/Board.js"></script>

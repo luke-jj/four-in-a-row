@@ -13,6 +13,7 @@ class Player {
    * @param   {integer}   tokenAmount - Number of token objects to be created
    * @return  {array}     tokens - array of tokens
    */
+
   createTokens(tokenAmount) {
     const tokens = new Array();
     for (let i = 0; i < tokenAmount; i++) {
@@ -25,6 +26,7 @@ class Player {
    * Get all tokens that have not been used yet
    * return {array}   array of unused tokens
    */
+
   get unusedTokens() {
     return this.tokens.filter(token => !token.dropped);
   }
@@ -33,6 +35,7 @@ class Player {
    * get the active token by returning the first unused token in the
    * unusedTokens array
    */
+
   get activeToken() {
     return this.unusedTokens[0];
   }
@@ -41,7 +44,9 @@ class Player {
    * Check if a player has any undropped tokens left
    * @return {Boolean}
    */
+
   checkTokens() {
     return this.unusedTokens.length == 0 ? false : true;
   }
 }
+
