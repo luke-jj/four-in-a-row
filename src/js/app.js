@@ -7,9 +7,12 @@ const game = new Game();
  */
 
 beginButton.addEventListener('click', e => {
-  e.target.style.display = 'none';
+  e.target.parentElement.style.display = 'none';
   document.getElementById('play-area').style.opacity = '1';
-  game.startGame();
+
+  const playerOneName = document.getElementById('playerone').value;
+  const playerTwoName = document.getElementById('playertwo').value;
+  game.startGame(playerOneName, playerTwoName);
 });
 
 /*

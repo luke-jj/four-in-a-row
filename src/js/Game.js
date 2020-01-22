@@ -19,9 +19,10 @@ class Game {
    */
 
   createPlayers() {
-    const playerArray = [new Player('player1', 1, '#e15258', true),
-                         new Player('player2', 2, '#e59a13')];
-    return playerArray;
+    return [
+      new Player('player1', 1, '#c6301f', true),
+      new Player('player2', 2, '#301fc6', false)
+    ];
   }
 
 
@@ -94,6 +95,10 @@ class Game {
     for (let player of this.players) {
       player.active = !(player.active);
     }
+
+    const statusMsg = `It's ${this.activePlayer.name}'s turn`;
+    const statusDisplay = document.getElementById('game-over');
+    statusDisplay.textContent = statusMsg;
   }
 
   /*
@@ -113,14 +118,12 @@ class Game {
     }
 
     if (targetSpace !== null) {
-      console.log('token played');
       game.ready = false;
       // second argument is a callback function, the callback function is
       // executed when the .drop function has finished.
       activeToken.drop(targetSpace, () => {
         game.updateGameState(activeToken, targetSpace);
       });
-      console.log('token dropped');
     }
   }
 
@@ -156,7 +159,6 @@ class Game {
   gameOver(message) {
     const gameOver = document.getElementById('game-over');
     gameOver.textContent = message;
-    gameOver.style.display = "block";
   }
 
   /*
@@ -166,10 +168,8 @@ class Game {
   handleKeydown(event) {
     if (this.ready) {
       if (event.key == "ArrowLeft") {
-        console.log('want to move left');
         this.activePlayer.activeToken.moveLeft();
       } else if (event.key == "ArrowRight") {
-        console.log('want to move right');
         this.activePlayer.activeToken.moveRight(this.board.columns);
       } else if (event.key == "ArrowDown") {
         this.playToken();
@@ -178,13 +178,20 @@ class Game {
   }
 
   /*
-   *
+   * Draw the board and set player names.
    */
 
-  startGame() {
+  startGame(playerOneName, playerTwoName) {
     this.board.drawHTMLBoard();
+    this.players[0].name = playerOneName;
+    this.players[1].name = playerTwoName;
     this.activePlayer.activeToken.drawHTMLToken();
     this.ready = true;
+
+    const statusMsg = `It's ${this.activePlayer.name}'s turn`;
+    const statusDisplay = document.getElementById('game-over');
+    statusDisplay.style.display = "block";
+    statusDisplay.textContent = statusMsg;
   }
 
 

@@ -37,9 +37,6 @@ class Token {
    */
 
   moveLeft() {
-    console.log(`trying to move left, columnLocation: ${this.columnLocation} `
-      + `offsetLeft: ${this.offsetLeft}`);
-
     if (this.columnLocation > 0) {
       this.htmlToken.style.left = `${this.offsetLeft - 76}px`;
       this.columnLocation -= 1;
@@ -52,9 +49,6 @@ class Token {
    */
 
   moveRight(columns) {
-    console.log(`trying to move right, columnLocation: ${this.columnLocation} `
-      + `offsetLeft: ${this.offsetLeft}`);
-
     if (this.columnLocation < columns - 1) {
       this.htmlToken.style.left = `${this.offsetLeft + 76}px`;
       this.columnLocation += 1;
